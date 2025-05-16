@@ -5,6 +5,7 @@ import heroImage from "../../assets/heroImage2.jpg";
 import Link from "next/link";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import SignInForm from "@/components/forms/sign-in-form";
 
 export default function SignIn() {
   return (
@@ -27,21 +28,7 @@ export default function SignIn() {
                 Sign In
               </h1>
             </div>
-            <form action="" className="flex flex-col gap-6 items-center mt-4  ">
-              <Input
-                type="email"
-                placeholder="Email address or phone number"
-                className="py-7 rounded-xs"
-              />
-              <Input
-                type="password"
-                placeholder="Password"
-                className="py-7 rounded-xs"
-              />
-              <Button className=" -mt-3 py-5 w-full rounded-xs bg-red-600 text-lg font-bold hover:brightness-80 hover:text-white">
-                <span>Sign In</span>
-              </Button>
-            </form>
+            <SignInForm />
             <div className=" text-center mt-5 font-light text-gray-100">
               <span>OR</span>
             </div>

@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import Image from "next/image";
-import heroImage from "../../assets/heroImage2.jpg";
-import Link from "next/link";
 import { Checkbox } from "@/components/ui/checkbox";
+
 import { Label } from "@/components/ui/label";
+import Image from "next/image";
+import Link from "next/link";
+import heroImage from "../../assets/heroImage2.jpg";
+import SignUpForm from "@/components/forms/sign-up-form";
 
 export default function SignUp() {
   return (
@@ -27,33 +27,8 @@ export default function SignUp() {
                 Sign Up
               </h1>
             </div>
-            <form action="" className="flex flex-col gap-6 items-center mt-4  ">
-              <Input
-                type="text"
-                placeholder="Name"
-                className="py-7 rounded-xs"
-              />
 
-              <Input
-                type="number"
-                placeholder="Phone number"
-                className="py-7 rounded-xs"
-              />
-
-              <Input
-                type="email"
-                placeholder="Email address"
-                className="py-7 rounded-xs"
-              />
-              <Input
-                type="password"
-                placeholder="Password"
-                className="py-7 rounded-xs"
-              />
-              <Button className=" -mt-3 py-5 w-full rounded-xs bg-red-600 text-lg font-bold hover:brightness-80 hover:text-white">
-                <span>Create account</span>
-              </Button>
-            </form>
+            <SignUpForm />
 
             <div className="mt-2">
               <div className="flex items-center gap-2 mt-6">
