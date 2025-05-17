@@ -1,11 +1,10 @@
+import SignInForm from "@/components/forms/sign-in-form";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import Image from "next/image";
-import heroImage from "../../assets/heroImage2.jpg";
-import Link from "next/link";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import SignInForm from "@/components/forms/sign-in-form";
+import Image from "next/image";
+import Link from "next/link";
+import heroImage from "../../assets/heroImage2.jpg";
 
 export default function SignIn() {
   return (

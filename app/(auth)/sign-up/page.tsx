@@ -52,8 +52,8 @@ export default function SignUp() {
 
                 <p className=" text-sm font-light text-zinc-400 mt-5">
                   This page is protected by Google reCAPTCHA to ensure you're
-                  not a bot.{" "}
-                  <Link href="" className=" underline text-blue-400">
+                  not a bot.
+                  <Link href="" className=" underline text-blue-400 mt-2.5">
                     Learn more.
                   </Link>
                 </p>
