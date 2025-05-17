@@ -3,6 +3,11 @@ import heroImage from "../app/assets/heroImage2.jpg";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import watchImage from "../app/assets/watchTv.png";
+import donwloadImage from "../app/assets/donwload.png";
+import everywereImage from "../app/assets/everywere.png";
+import kidsProfileImage from "../app/assets/kidsprofile.png";
 
 export default function Home() {
   return (
@@ -48,6 +53,69 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Separator orientation="horizontal" className="bg-zinc-600/50 py-0.5" />
+      <div className="mt-8 mb-12 space-y-8 md:max-w-[980px] 2xl:max-w-[1100px] mx-auto">
+        <div className="flex items-center justify-between">
+          <div className="flex flex-col gap-4 max-w-md">
+            <strong className="md:text-4xl 2xl:text-5xl font-bold">
+              Enjoy on your TV.
+            </strong>
+            <p className="md:text-lg 2xl:text-xl font-light">
+              Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,
+              Blu-ray players, and more.
+            </p>
+          </div>
+          <Image src={watchImage} className="w-2/3" alt="watch image" />
+        </div>
+      </div>
+      <Separator orientation="horizontal" className="bg-zinc-600/50 py-0.5" />
+
+      <div className="mt-8 mb-12 space-y-8 md:max-w-[980px] 2xl:max-w-[1100px] mx-auto">
+        <div className="flex items-center justify-between">
+          <Image src={donwloadImage} className="w-2/3" alt="watch image" />
+          <div className="flex flex-col gap-4 max-w-md">
+            <strong className="md:text-4xl 2xl:text-5xl font-bold">
+              Download your shows to watch offline.
+            </strong>
+            <p className="md:text-lg 2xl:text-xl font-light">
+              Save your favorites easily and always have something to watch.
+            </p>
+          </div>
+        </div>
+      </div>
+      <Separator orientation="horizontal" className="bg-zinc-600/50 py-0.5" />
+
+      <div className="mt-8 mb-12 space-y-8 md:max-w-[980px] 2xl:max-w-[1100px] mx-auto">
+        <div className="flex items-center justify-between">
+          <div className="flex flex-col gap-4 max-w-md">
+            <strong className="md:text-4xl 2xl:text-5xl font-bold">
+              Watch everywhere.
+            </strong>
+            <p className="md:text-lg 2xl:text-xl font-light">
+              Stream unlimited movies and TV shows on your phone, tablet,
+              laptop, and TV without paying more.
+            </p>
+          </div>
+          <Image src={everywereImage} className="w-2/3" alt="watch image" />
+        </div>
+      </div>
+      <Separator orientation="horizontal" className="bg-zinc-600/50 py-0.5" />
+
+      <div className="mt-8 mb-12 space-y-8 md:max-w-[980px] 2xl:max-w-[1100px] mx-auto">
+        <div className="flex items-center justify-between">
+          <Image src={kidsProfileImage} className="w-2/3" alt="watch image" />
+          <div className="flex flex-col gap-4 max-w-md">
+            <strong className="md:text-4xl 2xl:text-5xl font-bold">
+              Create profiles for kids.
+            </strong>
+            <p className="md:text-lg 2xl:text-xl font-light">
+              Send kids on adventures with their favorite characters in a space
+              made just for them—free with your membership.
+            </p>
+          </div>
+        </div>
+      </div>
+      <Separator orientation="horizontal" className="bg-zinc-600/50 py-0.5" />
     </div>
   );
 }
