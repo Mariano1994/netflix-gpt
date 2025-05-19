@@ -9,9 +9,9 @@ function Header({ signIn }: HeaderProps) {
   return (
     <div className=" w-full absolute z-30 ">
       <div className="max-w-[1200px] mx-auto py-8 flex items-center justify-between">
-        <div>
+        <Link href="/">
           <Image src={logo} className="w-36" alt="netflix logo image" />
-        </div>
+        </Link>
 
         {signIn ? (
           <Link

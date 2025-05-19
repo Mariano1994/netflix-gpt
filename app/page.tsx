@@ -8,6 +8,8 @@ import watchImage from "../app/assets/watchTv.png";
 import donwloadImage from "../app/assets/donwload.png";
 import everywereImage from "../app/assets/everywere.png";
 import kidsProfileImage from "../app/assets/kidsprofile.png";
+import GetStartForm from "@/components/forms/get-start-form";
+import FrenquentsQuestions from "@/components/frenquents-questions";
 
 export default function Home() {
   return (
@@ -38,18 +40,7 @@ export default function Home() {
                 membership
               </span>
             </div>
-
-            <form action="" className="flex gap-3 items-center mt-4 w-lg ">
-              <Input
-                type="email"
-                placeholder="Email address"
-                className="py-7.5 rounded-xs"
-              />
-              <Button className=" py-7.5 rounded-xs bg-red-600 text-lg font-bold hover:brightness-80 hover:text-white">
-                <span>Get Started</span>
-                <ChevronRight size={44} />
-              </Button>
-            </form>
+            <GetStartForm />
           </div>
         </div>
       </div>
@@ -100,7 +91,6 @@ export default function Home() {
         </div>
       </div>
       <Separator orientation="horizontal" className="bg-zinc-600/50 py-0.5" />
-
       <div className="mt-8 mb-12 space-y-8 md:max-w-[980px] 2xl:max-w-[1100px] mx-auto">
         <div className="flex items-center justify-between">
           <Image src={kidsProfileImage} className="w-2/3" alt="watch image" />
@@ -116,6 +106,10 @@ export default function Home() {
         </div>
       </div>
       <Separator orientation="horizontal" className="bg-zinc-600/50 py-0.5" />
+
+      <div className="mt-12 mb-12 space-y-8 md:max-w-[980px] 2xl:max-w-[1100px] mx-auto">
+        <FrenquentsQuestions />
+      </div>
     </div>
   );
 }
