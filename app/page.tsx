@@ -27,18 +27,13 @@ export default function Home() {
 
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-screen w-full bg-black/74 flex  items-center justify-center">
           <div className="flex flex-col items-center text-center w-2xl">
-            <div className="flex flex-col items-center gap-3">
+            <div className="flex flex-col items-center gap-3 mb-4">
               <h1 className="text-6xl font-bold text-white leading-19 ">
                 Unlimited movies, TV shows, and more
               </h1>
               <p className="text-xl text-white font-medium tracking-wide">
                 Start at USD 2.99. Cancel anytime
               </p>
-              <span className="text-base text-white tracking-wide mt-2">
-                {" "}
-                Ready to watch? Enter your email to create or restart your
-                membership
-              </span>
             </div>
             <GetStartForm />
           </div>
@@ -109,6 +104,9 @@ export default function Home() {
 
       <div className="mt-12 mb-12 space-y-8 md:max-w-[980px] 2xl:max-w-[1100px] mx-auto">
         <FrenquentsQuestions />
+      </div>
+      <div className=" flex items-center justify-center mt-18">
+        <GetStartForm />
       </div>
     </div>
   );
