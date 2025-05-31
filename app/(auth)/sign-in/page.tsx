@@ -5,8 +5,17 @@ import { Label } from "@/components/ui/label";
 import Image from "next/image";
 import Link from "next/link";
 import heroImage from "../../assets/heroImage2.jpg";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 
-export default function SignIn() {
+export default async function SignIn() {
+  const sesseion = await auth();
+
+  {
+    if (sesseion) {
+      redirect("/browse");
+    }
+  }
   return (
     <div className=" h-scree ">
       <div className=" h-screen z-10">

@@ -4,6 +4,8 @@ import { redirect } from "next/navigation";
 import { prisma } from "./prisma";
 import { SignUpFormSchema } from "./types";
 import { hashSync } from "bcrypt-ts";
+import { signIn } from "@/auth";
+import { isRedirectError } from "next/dist/client/components/redirect-error";
 
 // SIGN UP ACTION
 export async function createAccount(_prevState: any, formData: FormData) {
@@ -55,7 +57,26 @@ export async function createAccount(_prevState: any, formData: FormData) {
 }
 
 // SIGN IN ACTION
-export async function signIn(_prevState: any, formData: FormData) {
-  const { email, password } = Object.fromEntries(formData);
-  console.log(email, password);
+export async function signInUser(_prevState: any, formData: FormData) {
+  try {
+    await signIn("credentials", {
+      email: formData.get("email") as string,
+      password: formData.get("password") as string,
+      redirect: true,
+      callbackUrl: "/browse",
+    });
+  } catch (error: any) {
+    if (isRedirectError(error)) {
+      throw error;
+    }
+    if (error.type === "CredentialsSignin") {
+      return {
+        message: "E-mail or password is incorrect",
+      };
+    } else {
+      return {
+        message: "Ops, samething went wrong",
+      };
+    }
+  }
 }

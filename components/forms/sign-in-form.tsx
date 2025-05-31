@@ -2,13 +2,13 @@
 import React, { useActionState } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { signIn } from "@/lib/actions";
+import { signInUser } from "@/lib/actions";
 
 function SignInForm() {
-  const [state, sighnInUser, pending] = useActionState(signIn, null);
+  const [state, userSignIn, pending] = useActionState(signInUser, null);
   return (
     <form
-      action={sighnInUser}
+      action={userSignIn}
       className="flex flex-col gap-6 items-center mt-4  "
     >
       <Input
