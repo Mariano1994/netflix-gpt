@@ -3,35 +3,46 @@ import React, { useActionState } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { signInUser } from "@/lib/actions";
+import { CircleX } from "lucide-react";
 
 function SignInForm() {
   const [state, userSignIn, pending] = useActionState(signInUser, null);
   return (
-    <form
-      action={userSignIn}
-      className="flex flex-col gap-6 items-center mt-4  "
-    >
-      <Input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="Email address or phone number"
-        className="py-7 rounded-xs"
-      />
-      <Input
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Password"
-        className="py-7 rounded-xs"
-      />
-      <Button
-        disabled={pending}
-        className=" -mt-3 py-5 w-full rounded-xs bg-red-600 text-lg font-bold hover:brightness-80 hover:text-white"
+    <>
+      <div>
+        {state?.message ? (
+          <div className="flex items-center gap-1 mt-2">
+            <CircleX className="text-red-500" size={18} />
+            <p className="text-red-500 text-sm font-light">{state.message}</p>
+          </div>
+        ) : null}
+      </div>
+      <form
+        action={userSignIn}
+        className="flex flex-col gap-6 items-center mt-4  "
       >
-        <span>Sign In</span>
-      </Button>
-    </form>
+        <Input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email address or phone number"
+          className="py-7 rounded-xs"
+        />
+        <Input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          className="py-7 rounded-xs"
+        />
+        <Button
+          disabled={pending}
+          className=" -mt-3 py-5 w-full rounded-xs bg-red-600 text-lg font-bold hover:brightness-80 hover:text-white"
+        >
+          <span>Sign In</span>
+        </Button>
+      </form>
+    </>
   );
 }
 
