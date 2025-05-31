@@ -1,15 +1,12 @@
-import Image from "next/image";
-import heroImage from "../app/assets/heroImage2.jpg";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
-import watchImage from "../app/assets/watchTv.png";
-import donwloadImage from "../app/assets/donwload.png";
-import everywereImage from "../app/assets/everywere.png";
-import kidsProfileImage from "../app/assets/kidsprofile.png";
 import GetStartForm from "@/components/forms/get-start-form";
 import FrenquentsQuestions from "@/components/frenquents-questions";
+import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
+import donwloadImage from "../app/assets/donwload.png";
+import everywereImage from "../app/assets/everywere.png";
+import heroImage from "../app/assets/heroImage2.jpg";
+import kidsProfileImage from "../app/assets/kidsprofile.png";
+import watchImage from "../app/assets/watchTv.png";
 
 export default function Home() {
   return (
