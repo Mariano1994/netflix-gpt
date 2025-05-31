@@ -3,9 +3,9 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { useActionState } from "react";
 import { createAccount } from "@/lib/actions";
-import { CircleX } from "lucide-react";
+import { CircleX, Loader2 } from "lucide-react";
 function SignUpForm() {
-  const [state, signUpUser, pending] = useActionState(createAccount, null);
+  const [state, signUpUser, isPending] = useActionState(createAccount, null);
   return (
     <form
       action={signUpUser}
@@ -18,7 +18,7 @@ function SignUpForm() {
           id="name"
           placeholder="Name"
           className={`py-7 rounded-xs ${
-            state?.error?.name ? "border-red-500" : ""
+            state?.error.name ? "border-red-500" : ""
           }`}
         />
 
@@ -95,10 +95,14 @@ function SignUpForm() {
         ) : null}
       </div>
       <Button
-        disabled={pending}
+        disabled={isPending}
         className=" -mt-3 py-5 w-full rounded-xs bg-red-600 text-lg font-bold hover:brightness-80 hover:text-white"
       >
-        <span>Create account</span>
+        {isPending ? (
+          <Loader2 size={32} className="animate-spin text-white " />
+        ) : (
+          <span>Create account</span>
+        )}
       </Button>
     </form>
   );
