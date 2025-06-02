@@ -1,21 +1,21 @@
 "use client";
-import React, { useActionState } from "react";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
 import { signInUser } from "@/lib/actions";
 import { CircleX, Loader2 } from "lucide-react";
+import { useActionState } from "react";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 
 function SignInForm() {
   const [state, userSignIn, isPending] = useActionState(signInUser, null);
   return (
     <>
       <div>
-        {state?.message ? (
+        {state?.message && (
           <div className="flex items-center gap-1 mt-2">
             <CircleX className="text-red-500" size={18} />
             <p className="text-red-500 text-sm font-light">{state.message}</p>
           </div>
-        ) : null}
+        )}
       </div>
       <form
         action={userSignIn}

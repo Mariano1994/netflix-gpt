@@ -4,6 +4,7 @@ import logo from "../app/assets/logo.svg";
 import { auth } from "@/auth";
 import { ManageUser } from "./manage-user";
 import { Suspense } from "react";
+import { NavLinks } from "./nav-links";
 
 async function Header() {
   const session = await auth();
@@ -11,9 +12,17 @@ async function Header() {
   return (
     <div className=" w-full absolute z-30 ">
       <div className="max-w-[1200px] mx-auto py-8 flex items-center justify-between">
-        <Link href="/">
-          <Image src={logo} className="w-36" alt="netflix logo image" />
-        </Link>
+        <div className="flex  items-center gap-10">
+          <Link href="/">
+            <Image
+              src={logo}
+              className={`${session ? "w-26" : "w-36"}`}
+              alt="netflix logo image"
+            />
+          </Link>
+
+          {session && <NavLinks />}
+        </div>
 
         {!session ? (
           <Link
