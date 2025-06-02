@@ -1,11 +1,11 @@
 "use server";
 
+import { signIn, signOut } from "@/auth";
+import { hashSync } from "bcrypt-ts";
+import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { redirect } from "next/navigation";
 import { prisma } from "./prisma";
 import { SignUpFormSchema } from "./types";
-import { hashSync } from "bcrypt-ts";
-import { signIn } from "@/auth";
-import { isRedirectError } from "next/dist/client/components/redirect-error";
 
 // SIGN UP ACTION
 export async function createAccount(_prevState: any, formData: FormData) {
@@ -79,4 +79,12 @@ export async function signInUser(_prevState: any, formData: FormData) {
       };
     }
   }
+}
+
+// SIGN OUT ACTION
+export async function Logout() {
+  console.log("logout");
+  await signOut();
+
+  redirect("/sign-in");
 }

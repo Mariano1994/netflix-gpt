@@ -3,10 +3,10 @@ import React, { useActionState } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { signInUser } from "@/lib/actions";
-import { CircleX } from "lucide-react";
+import { CircleX, Loader2 } from "lucide-react";
 
 function SignInForm() {
-  const [state, userSignIn, pending] = useActionState(signInUser, null);
+  const [state, userSignIn, isPending] = useActionState(signInUser, null);
   return (
     <>
       <div>
@@ -36,10 +36,10 @@ function SignInForm() {
           className="py-7 rounded-xs"
         />
         <Button
-          disabled={pending}
+          disabled={isPending}
           className=" -mt-3 py-5 w-full rounded-xs bg-red-600 text-lg font-bold hover:brightness-80 hover:text-white"
         >
-          <span>Sign In</span>
+          {isPending ? <Loader2 className="animate-spin" /> : "Sign In"}
         </Button>
       </form>
     </>

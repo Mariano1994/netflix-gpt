@@ -1,14 +1,23 @@
+import { auth } from "@/auth";
 import GetStartForm from "@/components/forms/get-start-form";
 import FrenquentsQuestions from "@/components/frenquents-questions";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import donwloadImage from "../app/assets/donwload.png";
 import everywereImage from "../app/assets/everywere.png";
 import heroImage from "../app/assets/heroImage2.jpg";
 import kidsProfileImage from "../app/assets/kidsprofile.png";
 import watchImage from "../app/assets/watchTv.png";
 
-export default function Home() {
+export default async function Home() {
+  const session = await auth();
+  {
+    if (session) {
+      redirect("/browse");
+    }
+  }
+
   return (
     <div className=" h-scree ">
       <div className=" h-screen z-10">
