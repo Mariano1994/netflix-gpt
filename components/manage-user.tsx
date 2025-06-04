@@ -17,10 +17,10 @@ import {
   UserRound,
 } from "lucide-react";
 import Image from "next/image";
-import avatarImage from "../app/assets/avatarImage.png";
 
 import Form from "next/form";
 import { Logout } from "@/lib/actions";
+import { AvatarUserImage } from "@/lib/contants";
 
 export async function ManageUser() {
   const session = await auth();
@@ -29,7 +29,7 @@ export async function ManageUser() {
   return (
     <div className="flex items-center gap-2">
       <div className="mb-1">
-        <Image src={avatarImage} alt="avatar image" className="rounded" />
+        <Image src={AvatarUserImage} alt="avatar image" className="rounded" />
       </div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>

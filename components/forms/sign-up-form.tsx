@@ -4,8 +4,17 @@ import { Button } from "../ui/button";
 import { useActionState } from "react";
 import { createAccount } from "@/lib/actions";
 import { CircleX, Loader2 } from "lucide-react";
-function SignUpForm() {
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+async function SignUpForm() {
   const [state, signUpUser, isPending] = useActionState(createAccount, null);
+  const session = await auth();
+
+  {
+    if (session) {
+      redirect("/browse");
+    }
+  }
   return (
     <form
       action={signUpUser}

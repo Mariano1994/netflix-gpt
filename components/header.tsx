@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../app/assets/logo.svg";
 import { auth } from "@/auth";
 import { ManageUser } from "./manage-user";
 import { Suspense } from "react";
 import { NavLinks } from "./nav-links";
+import { Logo } from "@/lib/contants";
 
 async function Header() {
   const session = await auth();
@@ -15,7 +15,7 @@ async function Header() {
         <div className="flex  items-center gap-10">
           <Link href="/">
             <Image
-              src={logo}
+              src={Logo}
               className={`${session ? "w-26" : "w-36"}`}
               alt="netflix logo image"
             />
