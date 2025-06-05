@@ -14,3 +14,20 @@ export const SignUpFormSchema = z.object({
     .string()
     .min(8, { message: "Password must be at least 6 characters" }),
 });
+
+export interface MOVIE {
+  adult: boolean;
+  backdrop_path: string;
+  genre_ids: number[];
+  id: number;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  release_date: string;
+  title: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+}

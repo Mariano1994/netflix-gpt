@@ -7,6 +7,7 @@ type User = {
   password?: string;
 };
 
+// GET USER FROM DB BY CREDENTIALS
 export async function findUserByCredentials(
   email: string,
   password: string
