@@ -16,6 +16,7 @@ async function Header() {
           <Link href="/">
             <Image
               src={Logo}
+              priority
               className={`${session ? "w-26" : "w-36"}`}
               alt="netflix logo image"
             />
