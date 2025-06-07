@@ -19,9 +19,9 @@ export default async function Home() {
   }
 
   return (
-    <div className=" h-scree ">
-      <div className=" h-screen z-10">
-        <div className="relative h-screen ">
+    <>
+      <div>
+        <div className=" h-screen ">
           <Image
             fill
             priority
@@ -46,7 +46,7 @@ export default async function Home() {
         </div>
       </div>
       <Separator orientation="horizontal" className="bg-zinc-600/50 py-0.5" />
-      <div className="mt-8 mb-12 space-y-8 md:max-w-[980px] 2xl:max-w-[1100px] mx-auto">
+      <div className=" mt-8 mb-12 space-y-8 md:max-w-[980px] 2xl:max-w-[1100px] mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-4 max-w-md">
             <strong className="md:text-4xl 2xl:text-5xl font-bold">
@@ -114,6 +114,6 @@ export default async function Home() {
       <div className=" flex items-center justify-center mt-18">
         <GetStartForm />
       </div>
-    </div>
+    </>
   );
 }

@@ -17,9 +17,9 @@ export default async function SignIn() {
     }
   }
   return (
-    <div className=" h-scree ">
-      <div className=" h-screen z-10">
-        <div className="relative h-screen ">
+    <>
+      <div>
+        <div className="h-screen">
           <Image
             fill
             priority
@@ -82,6 +82,6 @@ export default async function SignIn() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

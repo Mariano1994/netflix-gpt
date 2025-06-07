@@ -21,7 +21,7 @@ export async function VideoBackgroundInfo({
 
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center gap-2">
-              <button className="flex items-center gap-3 py-2 px-6 text-black bg-white rounded-sm font-bold hover:brightness-95 hover:cursor-pointer">
+              <button className="flex items-center gap-3 py-2 px-6 text-black bg-white rounded-sm font-bold hover:brightness-85 hover:cursor-pointer">
                 <Play size={28} className="text-black" fill="currentColor" />
                 <span className="text-md">Play</span>
               </button>
@@ -30,6 +30,8 @@ export async function VideoBackgroundInfo({
                 <span className="text-md">More info</span>
               </button>
             </div>
+
+            {/* TODO: Button to activate sound on video background */}
             {/* <div>
                 <span>move sound</span>
               </div> */}

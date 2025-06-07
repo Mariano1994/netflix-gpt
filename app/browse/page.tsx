@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import MainMoveTrailer from "@/components/main-move-triller";
+import { MoveisListRecomendation } from "@/components/moveis-list-recomendation";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
@@ -11,11 +12,15 @@ async function Browse() {
     }
   }
   return (
-    <div className="h-screen w-full bg-white/10">
-      <Suspense>
-        <MainMoveTrailer />
-      </Suspense>
-    </div>
+    <>
+      <div className=" h-screen w-full ">
+        <Suspense>
+          <MainMoveTrailer />
+        </Suspense>
+      </div>
+
+      <MoveisListRecomendation />
+    </>
   );
 }
 

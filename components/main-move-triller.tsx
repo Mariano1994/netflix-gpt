@@ -21,10 +21,10 @@ async function MainMoveTrailer() {
   )[0];
 
   return (
-    <main className="w-full ">
+    <>
       <VideoBackground videoTrailer={videoTrailer} />
       <VideoBackgroundInfo movieToDisplay={movieToDisplay} />
-    </main>
+    </>
   );
 }
 

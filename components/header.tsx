@@ -10,7 +10,7 @@ async function Header() {
   const session = await auth();
 
   return (
-    <div className=" w-full absolute z-30 ">
+    <div className=" w-full absolute z-30  ">
       <div className="max-w-[1200px] mx-auto py-8 flex items-center justify-between">
         <div className="flex  items-center gap-10">
           <Link href="/">

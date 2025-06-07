@@ -8,9 +8,9 @@ import SignUpForm from "@/components/forms/sign-up-form";
 
 export default function SignUp() {
   return (
-    <div className=" h-scree ">
-      <div className=" h-screen z-10">
-        <div className="relative h-screen ">
+    <>
+      <div>
+        <div className=" h-screen ">
           <Image
             fill
             priority
@@ -21,7 +21,7 @@ export default function SignUp() {
         </div>
 
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-screen w-full bg-black/60 flex  items-center justify-center">
-          <div className="flex flex-col  w-md bg-black/70 p-14 mt-24 mb-18">
+          <div className="flex flex-col  w-md bg-black/70 p-14 mt-28 mb-18">
             <div className="flex flex-col -mt-4 gap-3">
               <h1 className="text-4xl font-bold text-white leading-19 ">
                 Sign Up
@@ -62,6 +62,6 @@ export default function SignUp() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

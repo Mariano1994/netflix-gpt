@@ -6,15 +6,9 @@ import { createAccount } from "@/lib/actions";
 import { CircleX, Loader2 } from "lucide-react";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
-async function SignUpForm() {
+function SignUpForm() {
   const [state, signUpUser, isPending] = useActionState(createAccount, null);
-  const session = await auth();
 
-  {
-    if (session) {
-      redirect("/browse");
-    }
-  }
   return (
     <form
       action={signUpUser}
