@@ -4,7 +4,7 @@ const links = [
   {
     id: crypto.randomUUID(),
     label: "Home",
-    href: "#",
+    href: "/browse",
   },
 
   {

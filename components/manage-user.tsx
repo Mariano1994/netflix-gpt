@@ -21,6 +21,7 @@ import Image from "next/image";
 import Form from "next/form";
 import { Logout } from "@/lib/actions";
 import { AvatarUserImage } from "@/lib/contants";
+import Link from "next/link";
 
 export async function ManageUser() {
   const session = await auth();
@@ -28,6 +29,9 @@ export async function ManageUser() {
   const user = session?.user;
   return (
     <div className="flex items-center gap-2">
+      <div>
+        <Link href="/browse/gpt-recomendations">GPT RECOMENDATIONS</Link>
+      </div>
       <div className="mb-1">
         <Image src={AvatarUserImage} alt="avatar image" className="rounded" />
       </div>
